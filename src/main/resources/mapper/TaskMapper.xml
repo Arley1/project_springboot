@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dev.com.mapper.TaskMapper">
+    <resultMap id="taskResult" type="dev.com.pojo.entry.TaskEntry">
+        <id     property="id"     column="id"/>
+        <result property="taskId"   column="taskId"/>
+        <result property="taskName"   column="taskName"/>
+    </resultMap>
+    <select id="queryAll" resultType="dev.com.pojo.Task">
+        select * from tb_task
+    </select>
+
+    <select id="queryList" resultMap="taskResult">
+         select * from tb_task
+    </select>
+
+    <insert id="addTask" parameterType="dev.com.pojo.Task">
+        insert into tb_task(taskId,taskName) values (#{taskId},#{taskName})
+    </insert>
+</mapper>
