@@ -30,4 +30,8 @@ public class OrderController {
         return "ok";
     }
 
+    @GetMapping("/delete/{id}")
+    public void deleteOrder(@PathVariable("id") Long id){
+        orderService.deleteOrder(id);
+    }
 }

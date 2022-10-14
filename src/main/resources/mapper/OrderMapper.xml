@@ -11,7 +11,10 @@
         #{num}
         )
     </insert>
-    <select id="getOrderById" parameterType="Long" resultType="dev.com.pojo.Order">
+    <select id="getOrderById" parameterType="Long" resultType="Order">
         select * from tb_order where order_id= #{id}
     </select>
+    <delete id="deleteOrder" parameterType="Long">
+        delete from tb_order where order_id= #{id}
+    </delete>
 </mapper>
