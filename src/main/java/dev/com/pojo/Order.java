@@ -7,13 +7,17 @@ public class Order {
     private Double price;
     private Integer num;
 
-    public Order(String orderName, Long orderId, String address, Double price, Integer num) {
-        this.orderName = orderName;
-        this.orderId = orderId;
-        this.address = address;
-        this.price = price;
-        this.num = num;
+    public Order(){
+
     }
+
+//    public Order(String orderName, Long orderId, String address, Double price, Integer num) {
+//        this.orderName = orderName;
+//        this.orderId = orderId;
+//        this.address = address;
+//        this.price = price;
+//        this.num = num;
+//    }
 
     public String getOrderName() {
         return orderName;
