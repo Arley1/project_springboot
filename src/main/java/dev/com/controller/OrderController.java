@@ -1,5 +1,6 @@
 package dev.com.controller;
 
+import dev.com.annotation.AnnotationLogIntercepter;
 import dev.com.pojo.Order;
 import dev.com.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,4 +35,12 @@ public class OrderController {
     public void deleteOrder(@PathVariable("id") Long id){
         orderService.deleteOrder(id);
     }
+
+    @AnnotationLogIntercepter(booleanValue = true)
+    @RequestMapping("/test")
+    public String testAnnotationIntercepter(){
+        return "ok";
+    }
+
+
 }
